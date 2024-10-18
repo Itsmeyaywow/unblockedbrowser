@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Simple Browser</title>  
+    <style>  
+        #address-bar {  
+            width: 80%;  
+            padding: 5px;  
+        }  
+        #go-button {  
+            padding: 5px;  
+        }  
+        #browser-frame {  
+            width: 100%;  
+            height: 90vh;  
+            border: none;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <input type="text" id="address-bar" placeholder="Enter URL">  
+    <button id="go-button">Go</button>  
+    <iframe id="browser-frame"></iframe>  
+  
+    <script>  
+        document.getElementById('go-button').addEventListener('click', function() {  
+            const url = document.getElementById('address-bar').value;  
+            if (url) {  
+                document.getElementById('browser-frame').src = url;  
+            }  
+        });  
+    </script>  
+</body>  
+</html>  
